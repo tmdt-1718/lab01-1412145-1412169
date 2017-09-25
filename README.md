@@ -1,9 +1,9 @@
-# BT-TMDT-1 - *Name of your app*
+﻿# BT-TMDT-1 - *Name of your app*
 
 **Name of your app** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
-* [ ] **1412145** Tên sinh viên 1 (tên tài khoản github)
+* [X] **1412145** Nguyễn Đức Hải (1412145)
 * [X] **1412169** Hồ Thảo Hiền (1412169)
 
 URL: **URL hosting của bài tập**
