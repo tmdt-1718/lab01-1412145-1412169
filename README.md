@@ -4,7 +4,7 @@
 
 Thành viên:
 * [ ] **1412145** Tên sinh viên 1 (tên tài khoản github)
-* [ X ] **1412169** Tên sinh viên 2 (1412169)
+* [X] **1412169** Tên sinh viên 2 (1412169)
 
 URL: **URL hosting của bài tập**
 
