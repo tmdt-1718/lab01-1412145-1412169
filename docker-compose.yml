@@ -1,0 +1,26 @@
+version: '2'
+services:
+  web:
+   # Cham --> tim den Dockerfile
+    build: .  
+
+    ports: 
+      - "3000:3000"
+
+    #map thu muc trong may ao va thu muc ben ngoai, lay thu muc hien hanh ngoai may that/web
+    volumes:            
+      - .:/web
+
+    #lenh mac dinh de start may ao
+    command: bundle exec "install && rails serve -b 0.0.0.0" #overide cmd ben Dockerfile, lenh duoc chay sau khi da tao ra may ao roi
+    entrypoint: sh /web/startup.sh
+    
+    links:
+      - db
+  
+  db:
+    image: postgres 
+    environment: 
+      - POSTGRES_USER=hien_hai
+      - POSTGRES_PASSWORD=123
+     
