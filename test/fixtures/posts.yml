@@ -3,15 +3,15 @@
 one:
   title: MyString
   content: MyText
-  urlimg: MyString
   viewcount: 1
+  username: MyString
   isdeleted: false
-  user: one
+  urlimg: MyString
 
 two:
   title: MyString
   content: MyText
-  urlimg: MyString
   viewcount: 1
+  username: MyString
   isdeleted: false
-  user: two
+  urlimg: MyString

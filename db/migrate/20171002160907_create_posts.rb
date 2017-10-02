@@ -3,10 +3,10 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     create_table :posts do |t|
       t.string :title
       t.text :content
-      t.string :urlimg
       t.integer :viewcount
+      t.string :username
       t.boolean :isdeleted
-      t.references :user, foreign_key: true
+      t.string :urlimg
 
       t.timestamps
     end
