@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get '/about', to: 'about#show'
+  get '/login', to: 'about#login'
+  get '/register', to: 'about#register'
 
   resources :posts
 
