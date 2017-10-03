@@ -1,3 +1,11 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<%= root_path %>">Home</a>
+  </li>
+  <li class="breadcrumb-item active">Blog</li>
+</ol>
+
 <h1>Blog</h1>
 
 <table>
@@ -5,6 +13,7 @@
         <th>Title</th>
         <th>Content</th>
         <th>Username</th>
+        <th>View</th>
     </tr>
 
     <% @post.each do |post| %>
@@ -12,6 +21,7 @@
             <td><%= post.title %></td>
             <td><%= post.content %></td>
             <td><%= post.username %></td>
+            <td><%= post.viewcount %></td>
             <td><%= link_to 'Show', post_path(post) %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Destroy', post_path(post),

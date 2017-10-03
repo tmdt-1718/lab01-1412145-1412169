@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     def create
         # @post = Post.new(post_params)
-        @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content])
+        @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content], viewcount: 0)
 
         @post.save
         redirect_to @post
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
-        
+
         redirect_to posts_path
     end
 
