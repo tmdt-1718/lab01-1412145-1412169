@@ -3,8 +3,9 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
-        
+        # @post = Post.new(post_params)
+        @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content])
+
         @post.save
         redirect_to @post
     end
