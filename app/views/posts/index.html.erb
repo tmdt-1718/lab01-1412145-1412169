@@ -26,7 +26,7 @@
                     </div>
                     <div class="dropdown">
                         <a class="nav-link" id="moreActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
-                        <i class="fa fa-bars"></i>
+                            <i class="fa fa-bars"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="moreActionDropdown">
                             <a class="dropdown-item" href="<%= edit_post_path(post) %>">
@@ -46,7 +46,7 @@
                     <h4><b><%= post.title %></b></h4>
                 </p>
                 <p class="card-text medium">
-                    <%= post.content %>
+                    <%= truncate(post.content, length: 100, separator: ' ') %>
                 </p>
                 <p class="card-text small" align="right">
                     <a href="<%= post_path(post) %>">View more >></a>
