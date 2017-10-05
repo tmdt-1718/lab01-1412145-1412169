@@ -86,3 +86,7 @@ production:
   database: web_production
   username: web
   password: <%= ENV['WEB_DATABASE_PASSWORD'] %>
+
+
+  # pg_ctl -D /var/lib/postgresql/data -l logfile start
+

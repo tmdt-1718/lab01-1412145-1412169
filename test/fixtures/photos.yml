@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  urlimg: MyString
+  creator: MyString
+  viewcount: 1
+
+two:
+  urlimg: MyString
+  creator: MyString
+  viewcount: 1
