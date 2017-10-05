@@ -1,5 +1,10 @@
 <h1>Sign up</h1>
-<%= form_for(@account) do |f| %>
+<%= form_for(@account, url: signup_path) do |f| %>
+    <%= render 'shared/error_messages' %>    
+
+    <%= f.label :fullname %><br>
+    <%= f.text_field :fullname %><br>
+
     <%= f.label :username %><br>
     <%= f.text_field :username %><br>
 
