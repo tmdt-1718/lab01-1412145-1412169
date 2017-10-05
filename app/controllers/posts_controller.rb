@@ -5,7 +5,11 @@ class PostsController < ApplicationController
 
     def create
         # @post = Post.new(post_params)
-        @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content], viewcount: 0)
+        if logged_in?
+            @post = Post.new(username: current_account.fullname, title: params[:post][:title], content: params[:post][:content], viewcount: 0)
+        else
+            @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content], viewcount: 0)
+        end
 
         @post.save
         redirect_to @post

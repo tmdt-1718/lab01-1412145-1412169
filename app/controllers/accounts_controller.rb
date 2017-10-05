@@ -10,6 +10,7 @@ class AccountsController < ApplicationController
     def create
         @account = Account.new(account_params)
         if @account.save
+            log_in @account
             redirect_to @account
         else
             render 'new'

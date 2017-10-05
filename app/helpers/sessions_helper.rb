@@ -13,4 +13,10 @@ module SessionsHelper
     def logged_in?
         !current_account.nil?
     end
+
+    # Logs out the current account.
+    def log_out
+        session.delete(:account_id)
+        @current_account = nil
+    end
 end
