@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RegisterControllerTest < ActionDispatch::IntegrationTest
+class AlbumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

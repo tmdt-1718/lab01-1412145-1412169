@@ -1,0 +1,18 @@
+<%= form_with scope: :album, url: album_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :Image %><br>
+    <%= form.text_area :urlimg %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

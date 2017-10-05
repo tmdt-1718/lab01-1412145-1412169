@@ -1,0 +1,37 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">Album</li>
+</ol>
+<div class="mb-0 mt-4">
+  <i class="fa fa-newspaper-o"></i> Album <strong><%= @album.title %></strong>
+</div>
+<p class="card-text small"><%= @album.description %></p>
+ <%= link_to new_album_photo_path, controller: 'photos' do %>
+      <button type="button" class="btn btn-outline-primary btn-sm ">Add new photo</button>
+  <% end %>
+
+
+
+<hr class="mt-2">
+<div class="card-columns">
+  <div class="card mb-3">
+    <a href="#">
+      <img class="card-img-top img-fluid w-100" src="<%= @album.urlimg %>" alt="">
+    </a>
+    <hr class="my-0">
+    <div class="card-footer small text-muted"> Created <%=time_ago_in_words(@album.created_at)%> ago
+    </div>
+  </div>
+</div>
+
+<% @album.photos.each do |photo| %>
+<div class="card-columns">
+  <div class="card mb-3">
+    <a href="#">
+      <img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt="">
+    </a>
+    <hr class="my-0">
+    <div class="card-footer small text-muted"> Created <%=time_ago_in_words(photo.created_at)%> ago
+    </div>
+  </div>
+</div>
+<% end %>
