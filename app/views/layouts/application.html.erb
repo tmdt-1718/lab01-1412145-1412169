@@ -109,16 +109,31 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="<%= signup_path %>">
-            <i class="fa fa-fw fa-sign-out"></i>Signup
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= login_path %>">
-            <i class="fa fa-fw fa-key"></i>Login
-          </a>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" aria-haspopup="true">
+              Hi, <%= current_account.fullname %>! <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_account, class:"dropdown-item" %></li>
+              <div class="dropdown-divider"></div>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete, class:"dropdown-item" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= signup_path %>">
+              <i class="fa fa-fw fa-sign-out"></i>Signup
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= login_path %>">
+              <i class="fa fa-fw fa-key"></i>Login
+            </a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
