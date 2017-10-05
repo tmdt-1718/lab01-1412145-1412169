@@ -1,0 +1,10 @@
+<%= form_with(model: [ @album, @album.photos.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :Img %><br>
+    <%= form.text_field :urlimg %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

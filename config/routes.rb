@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get '/register', to: 'about#register'
 
   resources :posts
-  resources :albums
+  resources :albums do
+  	resources :photos
+  end
+  
 
   root 'home#index'
 

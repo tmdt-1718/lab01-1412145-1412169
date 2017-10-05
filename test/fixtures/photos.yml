@@ -4,8 +4,10 @@ one:
   urlimg: MyString
   creator: MyString
   viewcount: 1
+  album: one
 
 two:
   urlimg: MyString
   creator: MyString
   viewcount: 1
+  album: two
