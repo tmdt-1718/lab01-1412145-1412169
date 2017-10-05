@@ -3,11 +3,15 @@ Rails.application.routes.draw do
 
   get '/about', to: 'about#show'
 
+  get '/signup', to: 'accounts#new'
+
   # resources :about
 
   resources :posts
 
-  resources :home
+  resources :accounts
+
+  # resources :home
 
   root 'home#index'
 

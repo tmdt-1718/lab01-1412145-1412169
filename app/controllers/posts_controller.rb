@@ -32,6 +32,10 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+
+        count = @post.viewcount
+        
+        @post.update(viewcount: (count+1))
     end
     
     def index
