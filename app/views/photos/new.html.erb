@@ -1,7 +1,7 @@
 <%= form_with(model: [ @album, @album.photos.build ], local: true) do |form| %>
   <p>
     <%= form.label :Img %><br>
-    <%= form.text_field :urlimg %>
+    <%= form.file_field :urlimg %>
   </p>
 
   <p>
