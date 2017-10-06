@@ -1,10 +1,12 @@
 <div class="mb-0 mt-4">
-<i class="fa fa-newspaper-o"></i> News Feed 
+<i class="fa fa-newspaper-o"></i> Albums
+<div class="clearfix"></div>
 <%= link_to new_album_path do %>
-  <button type="button" class="btn btn-outline-primary btn-sm">Create new album</button>
+  <button type="button" class="btn btn-primary btn-sm"">Create new album</button>
 <% end %>
 </div>
-<hr class="mt-2">
+<hr class="mt-10">
+
 <div class="card-columns">
 <% @albums.each do |album| %>
 <div class="card mb-3">
@@ -18,7 +20,7 @@
     <p class="card-text small"><%= album.description %>
     </p>
   </div>
-  <div class="card-footer small text-muted">Posted 32 mins ago</div>
+  <div class="card-footer small text-muted">Create <%= time_ago_in_words(album.created_at)%> ago</div>
 </div>
 <% end %>
 </div>

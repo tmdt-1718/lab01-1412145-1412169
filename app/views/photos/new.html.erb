@@ -1,10 +1,18 @@
-<%= form_with(model: [ @album, @album.photos.build ], local: true) do |form| %>
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4 text-center">
+<div class="page-header">
+  <h1 class="text-center"><small>Add photo to album</small></h1>
+</div>
+<%= form_with scope: :photo, url: album_photos_path, local: true do |form| %>
   <p>
-    <%= form.label :Img %><br>
-    <%= form.file_field :urlimg %>
+    <%= form.label :'Choose photo' %><br>
+    <%= form.file_field :urlimg, :class => 'btn btn-outline-primary' %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "Add to album", :class => 'btn btn-primary' %>
   </p>
 <% end %>
+</div>
+<div class="col-4"></div>

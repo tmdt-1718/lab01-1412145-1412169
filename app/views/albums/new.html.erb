@@ -1,5 +1,12 @@
-<%= form_with scope: :album, url: albums_path, local: true do |form| %>
+<div class="page-header">
+  <h1 class="text-center"><small>Create new album</small></h1>
+</div>
 
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    
+  <%= form_with scope: :album, url: albums_path, local: true do |form| %>
   <% if @album.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -14,21 +21,26 @@
   <% end %>
 
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :Title %><br>
+    <%= form.text_field :title, :class => 'form-control' %>
   </p>
  
   <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= form.label :Description %><br>
+    <%= form.text_area :description, :class => 'form-control' %>
   </p>
 
   <p>
-    <%= form.label :img %><br>
-    <%= form.file_field :urlimg %>
+    <%= form.label :'Choose photo' %><br>
+    <%= form.file_field :urlimg, :class => 'btn btn-outline-primary' %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Create album',:class => 'btn btn-primary' %>
   </p>
 <% end %>
+
+  </div>
+  <div class="col-3"></div>
+</div>
+

@@ -1,11 +1,13 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.all
+    @albums = Album.order(created_at: :desc).all
+
   end
 
   def show
     @album = Album.find(params[:id])
+    @photos = @album.photos.order(created_at: :desc).all
   end
 
   def new

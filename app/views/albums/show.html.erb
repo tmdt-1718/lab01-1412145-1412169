@@ -2,10 +2,18 @@
 <i class="fa fa-newspaper-o"></i> Album <strong><%= @album.title %></strong> 
 <p class="card-text small"><%= @album.description %></p>
 <%= link_to new_album_photo_path(@album) do %>
-  <button type="button" class="btn btn-outline-primary btn-sm">Create new photo</button>
+  <button type="button" class="btn btn-primary btn-sm">Create new photo</button>
 <% end %>
 </div>
 <hr class="mt-2">
 <div class="card-columns">
 </div>
-<!-- /Card Columns-->
+
+<div class="card-columns">
+<% @photos.each do |photo| %>
+<div class="card mb-3">
+  <img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt="">
+  <div class="card-footer small text-muted">Create <%= time_ago_in_words(photo.created_at)%> ago</div>
+</div>
+<% end %>
+</div>
