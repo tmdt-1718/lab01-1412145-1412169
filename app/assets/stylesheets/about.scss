@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.src-image {
+.about-src-image {
     display: none;
   }
   
-  .card {
+  .about-card {
     overflow: hidden;
     position: relative;
     border: 1px solid #CCC;
@@ -17,7 +17,7 @@
     color: rgb(136, 172, 217);
   }
   
-  .card .header-bg {
+  .about-card .about-header-bg {
     /* This stretches the canvas across the entire hero unit */
     position: absolute;
     top: 0;
@@ -28,13 +28,13 @@
     /* This positions the canvas under the text */
     z-index: 1;
   }
-  .card .avatar {
+  .about-card .about-avatar {
     position: relative;
     margin-top: 15px;
     z-index: 100;
   }
   
-  .card .avatar img {
+  .about-card .about-avatar img {
     width: 100px;
     height: 100px;
     -webkit-border-radius: 50%;
@@ -43,6 +43,6 @@
     border: 5px solid rgba(0,0,30,0.8);
   }
 
-  .content-center {
+  .about-content-center {
       text-align: center;
   }
