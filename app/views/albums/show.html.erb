@@ -8,12 +8,19 @@
 <hr class="mt-2">
 <div class="card-columns">
 </div>
-
-<div class="card-columns">
+<!-- <div>Count: @album.hit</div> -->
+<div class="row">
 <% @photos.each do |photo| %>
-<div class="card mb-3">
-  <img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt="">
-  <div class="card-footer small text-muted">Created <%= time_ago_in_words(photo.created_at)%> ago</div>
+<div class="col-md-4">
+	<div class="card mb-3">
+  		<a href="/albums/<%= photo.album_id %>/photo/<%= photo.id %>"><img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt=""></a>
+  		<div class="card-footer small text-muted">Created <%= time_ago_in_words(photo.created_at)%> ago
+  			 <% if photo.viewcount != nil %>
+		      <span class="pull-right"><%= photo.viewcount %> views</span>
+		      <% else %>
+		      <span class="pull-right">0 views</span>
+		      <% end %>
+		 </div>
+	</div>
 </div>
 <% end %>
-</div>

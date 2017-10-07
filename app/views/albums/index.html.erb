@@ -19,7 +19,13 @@
       <p class="card-text small"><%= album.description %>
       </p>
     </div>
-    <div class="card-footer small text-muted">Created <%= time_ago_in_words(album.created_at)%> ago</div>
+    <div class="card-footer small text-muted">Created <%= time_ago_in_words(album.created_at)%> ago 
+      <% if album.viewcount != nil %>
+      <span class="pull-right"><%= album.viewcount %> views</span>
+      <% else %>
+      <span class="pull-right">0 views</span>
+      <% end %>
+    </div>
   </div>
   <% end %>
 </div>

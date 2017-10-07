@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/login', to: 'about#login'
   get '/register', to: 'about#register'
 
+  get '/albums/:album_id/photo/:id', to: 'photos#show'
+
   resources :posts
   resources :albums do
   	resources :photos

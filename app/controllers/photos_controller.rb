@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+	impressionist
 	def show
 		@photo = Photo.find params[:id]
 	end
@@ -16,5 +17,8 @@ class PhotosController < ApplicationController
 	private
     def photo_params
       params.require(:photo).permit(:urlimg)
+    end
+
+    def index
     end
 end
