@@ -26,9 +26,9 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<%= home_index_path %>">
             <i class="fa fa-fw fa-home"></i>
-            <span class="nav-link-text">Home</span>
+           <span class="nav-link-text">Home</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Albums">
@@ -38,9 +38,8 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a class="nav-link" href="#">
-                <i class="fa fa-fw fa-plus"></i>
-                <span class="nav-link-text">Add Album</span>
+              <a class="nav-link" href="<%= new_album_path %>">
+                <span class="nav-link-text">Create new album</span>
               </a>
             </li>
           </ul>
@@ -81,7 +80,7 @@
       </ul>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link mr-lg-2" id="messagesDropdown" href="#" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link mr-lg-2" id="messagesDropdown" href="<%= albums_path %>" aria-haspopup="true" aria-expanded="false">
             Albums
           </a>
         </li>
@@ -110,7 +109,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Home</a>
+            <a href="<%= home_index_path %>">Home</a>
           </li>
           <li class="breadcrumb-item active">My Home</li>
         </ol>

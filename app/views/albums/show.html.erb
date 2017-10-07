@@ -13,7 +13,7 @@
 <% @photos.each do |photo| %>
 <div class="card mb-3">
   <img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt="">
-  <div class="card-footer small text-muted">Create <%= time_ago_in_words(photo.created_at)%> ago</div>
+  <div class="card-footer small text-muted">Created <%= time_ago_in_words(photo.created_at)%> ago</div>
 </div>
 <% end %>
 </div>

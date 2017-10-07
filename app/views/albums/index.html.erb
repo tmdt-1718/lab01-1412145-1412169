@@ -6,21 +6,20 @@
 <% end %>
 </div>
 <hr class="mt-10">
-
 <div class="card-columns">
-<% @albums.each do |album| %>
-<div class="card mb-3">
-  <%= link_to album_path(album) do %>
-  <img class="card-img-top img-fluid w-100" src="<%= album.urlimg %>" alt="">
-  <% end %>
-  <div class="card-body">
+  <% @albums.each do |album| %>
+  <div class="card mb-3">
     <%= link_to album_path(album) do %>
-    <h6 class="card-title mb-1"><%= album.title %></h6>
+    <img class="card-img-top img-fluid w-100" src="<%= album.urlimg %>" alt="">
     <% end %>
-    <p class="card-text small"><%= album.description %>
-    </p>
+    <div class="card-body">
+      <%= link_to album_path(album) do %>
+      <h6 class="card-title mb-1"><%= album.title %></h6>
+      <% end %>
+      <p class="card-text small"><%= album.description %>
+      </p>
+    </div>
+    <div class="card-footer small text-muted">Created <%= time_ago_in_words(album.created_at)%> ago</div>
   </div>
-  <div class="card-footer small text-muted">Create <%= time_ago_in_words(album.created_at)%> ago</div>
-</div>
-<% end %>
+  <% end %>
 </div>

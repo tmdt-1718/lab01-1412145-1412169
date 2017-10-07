@@ -2,39 +2,45 @@
 <i class="fa fa-newspaper-o"></i> News Feed 
 </div>
 <hr class="mt-2">
-<div class="card-columns">
+<div class="row">
 <% @photos.each do |photo| %>
-<div class="card mb-3">
-  <img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt="">
-  <div class="card-footer small text-muted"> Create <%= time_ago_in_words(photo.created_at)%> ago</div>
+<div class="col-4">
+      <div class="card mb-3">
+      <a href="<%= album_path(photo.album_id) %>"><img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt=""></a>
+      <div class="card-footer small text-muted"> Created <%= time_ago_in_words(photo.created_at)%> ago</div>
+    </div>
 </div>
 <% end %>
 </div>
 
 
+<div class="row">
 <% @posts.each do |post| %>
-    <div class="card-rows my-blog-post-index">
-        <div class="card mb-3">
-            <div class="card-body">
-                <div class="media mt-3">
-                    <a class="d-flex pr-3" href="#">
-                        <img src="http://placehold.it/45x45" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h6 class="card-title mb-1"><a href="#"><%= post.username %></a></h6>
-                        <div class="small text-muted">Create <%= time_ago_in_words(post.created_at) %> ago</div>
+    <div class="col-md-6">
+        <div class="card-rows my-blog-post-index">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="media mt-3">
+                        <a class="d-flex pr-3" href="#">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h6 class="card-title mb-1"><a href="#"><%= post.username %></a></h6>
+                            <div class="small text-muted">Created <%= time_ago_in_words(post.created_at) %> ago</div>
+                        </div>
                     </div>
-                </div>
-                <p class="card-text medium">
-                    <h4><b><%= post.title %></b></h4>
-                </p>
-                <p class="card-text medium">
-                    <%= truncate(post.content, length: 100, separator: ' ') %>
-                </p>
-                <p class="card-text small" align="right">
-                    <a href="<%= post_path(post) %>">View more >></a>
-                </p>
-            </div>    
+                    <p class="card-text medium">
+                        <h4><b><%= post.title %></b></h4>
+                    </p>
+                    <p class="card-text medium">
+                        <%= truncate(post.content, length: 100, separator: ' ') %>
+                    </p>
+                    <p class="card-text small" align="right">
+                        <a href="<%= post_path(post) %>">View more >></a>
+                    </p>
+                </div>    
+            </div>
         </div>
     </div>
 <% end %>
+</div>
