@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
-  impressionist 
+    before_action :logged_in_account, only: [:new, :create, :update, :destroy, :edit]
+    before_action :correct_account, only: [ :update, :destroy, :edit]
+
   def index
     @albums = Album.order(created_at: :desc).all
     @albums.each do |album|
@@ -10,20 +12,18 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @photos = @album.photos.order(created_at: :desc).all
-    impressionist(@album)
   end
 
   def new
   	@album = Album.new
   end
  
-  def create
-	  @album = Album.new(album_params)
-	  if @album.save
-	  	redirect_to @album
-	  else
-	  	render 'new'
-	  end
+  def create    
+    if logged_in?
+            @album = Album.new(title: params[:album][:title], description: params[:album][:description], urlimg: params[:album][:urlimg], creator: current_account.fullname, viewcount: 0)
+            @album.save
+            redirect_to @album
+        end
   end
  
   private
@@ -36,11 +36,25 @@ class AlbumsController < ApplicationController
      @sum_view = 0
      @photos = album.photos.all
      @photos.each do |photo|
-     if (photo.viewcount != nil)
-        @sum_view = @sum_view + photo.viewcount
-     end
+       if (photo.viewcount != nil)
+          @sum_view = @sum_view + photo.viewcount
+       end
+      end
      return @sum_view
-     end
+  end
+
+
+  # Confirms a logged-in account.
+  def logged_in_account
+      unless logged_in?
+      redirect_to login_path
+      end
+  end
+
+  # Confirms the correct user.
+  def correct_account
+      @albums = Album.find(params[:album_id])
+      redirect_to(root_path) unless current_account.fullname == @album.creator
   end
 
 end

@@ -1,7 +1,26 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<%= root_path %>">Home</a>
+  </li>
+   <li class="breadcrumb-item">
+    <a href="<%= albums_path %>">Albums</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<%= album_path(@album) %>"><%= @album.title %></a>
+  </li>
+  <li class="breadcrumb-item active">Add new photo</li>
+</ol>
 
 <div class="row">
  <div class="col-4"></div>
  <div class="col-4 text-center">
+
+<% if flash[:notice] %>
+<div class="alert alert-danger">
+  <%= flash[:notice] %>
+</div>
+  <% end %>
+
 <div class="page-header">
   <h1 class="text-center"><small>Add photo to album</small></h1>
 </div>

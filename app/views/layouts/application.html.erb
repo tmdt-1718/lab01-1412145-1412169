@@ -38,17 +38,16 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a class="nav-link" href="<%= new_album_path %>">
-                <span class="nav-link-text">Create new album</span>
-              <a class="nav-link" href="#">
+              
+              <a class="nav-link" href="<%= albums_path %>">
                 <i class="fa fa-fw fa-eye"></i>
                 <span class="nav-link-text">View</span>
               </a>
             </li>
             <li>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<%= new_album_path %>">
                 <i class="fa fa-fw fa-plus"></i>
-                <span class="nav-link-text">Add Album</span>
+                <span class="nav-link-text">Create new album</span>
               </a>
             </li>
           </ul>
@@ -68,7 +67,7 @@
             <li>
               <a class="nav-link" href="<%= new_post_path %>">
                 <i class="fa fa-fw fa-plus"></i>
-                <span class="nav-link-text">Add Post</span>
+                <span class="nav-link-text">Create new post</span>
               </a>
             </li>
           </ul>
@@ -142,12 +141,12 @@
     <div class="content-wrapper">
       <div class="container-fluid">
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+       <!--  <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="<%= home_index_path %>">Home</a>
           </li>
           <li class="breadcrumb-item active">My Home</li>
-        </ol>
+        </ol> -->
         <!-- Page content-->
         <%= yield %>
       </div>

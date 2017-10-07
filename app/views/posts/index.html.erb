@@ -9,22 +9,20 @@
 <div class="mb-0 mt-4">
     <div class="row">
         <div class="col-md-2 col-sm-2 col-lg-2">
-            <h2><i class="fa fa-newspaper-o"></i> Blog</h2>
+            <i class="fa fa-newspaper-o"></i> Blog
+            <div class="clearfix"></div>
+            <%= link_to new_post_path do %>
+            <button type="button" class="btn btn-primary btn-sm"">Add new post</button>
+            <% end %>
         </div>
-        <div class="col-md-2 col-sm-2 col-lg-2">
-            <a class="btn btn-md btn-primary" href="<%= new_post_path %>">
-                <i class="fa fw fa-plus"></i>
-                Add Post
-            </a>
-        </div>
+       
     </div>
     
 </div>
 <hr class="mt-2">
 
-
 <% @post.each do |post| %>
-    <div class="card-rows my-blog-post-index">
+    <div class="card-rows">
         <div class="card mb-3">
             <div class="card-body">
                 <div class="media mt-3">
@@ -33,7 +31,7 @@
                     </a>
                     <div class="media-body">
                         <h6 class="card-title mb-1"><a href="#"><%= post.username %></a></h6>
-                        <div class="small text-muted">32 mins ago</div>
+                        <div class="small text-muted">Created <%= time_ago_in_words(post.created_at)%> ago</div>
                     </div>
                     <div class="dropdown">
                         <a class="nav-link" id="moreActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    

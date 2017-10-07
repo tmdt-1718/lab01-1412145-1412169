@@ -19,20 +19,23 @@
 <div class="card-body">
     <%= form_with model: @post, local: true do |form| %>
         
-        <div class="form-group">
+        <p>
             <%= form.label :title %><br>
-            <%= form.text_field :title, class:"form-control" %>
-        </div>
+            <%= form.text_field :title, :class => 'form-control' %>
+        </p>
         
-        <div class="form-group">
+        <p>
             <%= form.label :content %><br>
-            <%= form.text_area :content, class:"form-control" %>
-        </div>
+            <%= form.text_area :content, :class => 'form-control' %>
+        </p>
         
-        <div class="form-group">
-            <%= form.submit %>
-        </div>
+        <p>
+            <%= form.submit :class => 'btn btn-primary' %>
+        </p>
         
     <% end %>
 </div>
+
+
+
 

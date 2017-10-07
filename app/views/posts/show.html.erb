@@ -18,7 +18,7 @@
                 </a>
                 <div class="media-body">
                     <h6 class="card-title mb-1"><a href="#"><%= @post.username %></a></h6>
-                    <div class="small text-muted">32 mins ago</div>
+                    <div class="small text-muted">Created <%= time_ago_in_words(@post.created_at)%> ago</div>
                 </div>
                 <div class="dropdown">
                     <a class="nav-link" id="moreActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    

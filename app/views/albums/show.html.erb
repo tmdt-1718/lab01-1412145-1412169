@@ -1,8 +1,18 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<%= root_path %>">Home</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<%= albums_path %>">Albums</a>
+  </li>
+  <li class="breadcrumb-item active"><%= @album.title %></li>
+</ol>
+
 <div class="mb-0 mt-4">
 <i class="fa fa-newspaper-o"></i> Album <strong><%= @album.title %></strong> 
 <p class="card-text small"><%= @album.description %></p>
 <%= link_to new_album_photo_path(@album) do %>
-  <button type="button" class="btn btn-primary btn-sm">Create new photo</button>
+  <button type="button" class="btn btn-primary btn-sm">Add new photo</button>
 <% end %>
 </div>
 <hr class="mt-2">
@@ -13,14 +23,17 @@
 <% @photos.each do |photo| %>
 <div class="col-md-4">
 	<div class="card mb-3">
-  		<a href="/albums/<%= photo.album_id %>/photo/<%= photo.id %>"><img class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt=""></a>
-  		<div class="card-footer small text-muted">Created <%= time_ago_in_words(photo.created_at)%> ago
+  		<a href="/albums/<%= photo.album_id %>/photo/<%= photo.id %>"><img style="height: 200px;" class="card-img-top img-fluid w-100" src="<%= photo.urlimg %>" alt=""></a>
+  		<div class="card-footer small text-muted">Created by <%= photo.creator%>
+
   			 <% if photo.viewcount != nil %>
 		      <span class="pull-right"><%= photo.viewcount %> views</span>
 		      <% else %>
 		      <span class="pull-right">0 views</span>
 		      <% end %>
+         
 		 </div>
 	</div>
 </div>
 <% end %>
+

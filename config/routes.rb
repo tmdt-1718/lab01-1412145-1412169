@@ -5,23 +5,24 @@ Rails.application.routes.draw do
   get 'posts/:id/viewcount', to: 'posts#getviewcount'
 
   get '/about', to: 'about#show'
-  get '/login', to: 'about#login'
-  get '/register', to: 'about#register'
+  # get '/login', to: 'about#login'
+  # get '/register', to: 'about#register'
   get '/albums/:album_id/photo/:id', to: 'photos#show'
 
+  # delete '/albums/:album_id/photos/:id', to: 'photos#destroy'
   
   
 
 
-  get '/signup', to: 'accounts#new'
+  # get '/signup', to: 'accounts#new'
 
-  post'/signup', to: 'accounts#create'
+  # post'/signup', to: 'accounts#create'
 
-  get '/login', to: 'sessions#new'
+  # get '/login', to: 'sessions#new'
 
-  post '/login', to: 'sessions#create'
+  # post '/login', to: 'sessions#create'
   
-  delete '/logout', to: 'sessions#destroy'
+  # delete '/logout', to: 'sessions#destroy'
 
 
   resources :posts

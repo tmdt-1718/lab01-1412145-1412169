@@ -6,16 +6,23 @@
   <li class="breadcrumb-item">
     <a href="<%= posts_path %>">Blog</a>
   </li>
-  <li class="breadcrumb-item active">Add Post</li>
+  <li class="breadcrumb-item active">Add new post</li>
 </ol>
 
-<!-- <h1>New Post</h1> -->
 
-<div class="bg-light">
-  <div class="container">
-      <div class="card mx-auto mt-5">
-          <div class="card-header">New Post</div>
+<div class="container">
+    <!-- <div class="card mx-auto mt-5"> -->
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 ">
+          
+          <div class="page-header">
+          <h1 class="text-center"><small>Create new post</small></h1>
+        </div>
           <%= render 'form' %>
+        </div>
+        <div class="col-md-3"></div>
       </div>
-  </div>
+        
+    <!-- </div> -->
 </div>

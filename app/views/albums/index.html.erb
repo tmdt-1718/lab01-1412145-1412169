@@ -1,4 +1,10 @@
 
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<%= root_path %>">Home</a>
+  </li>
+  <li class="breadcrumb-item active">Albums</li>
+</ol>
 <div class="mb-0 mt-4">
 <i class="fa fa-newspaper-o"></i> Albums
 <div class="clearfix"></div>
@@ -17,12 +23,15 @@
       <%= link_to album_path(album) do %>
       <h6 class="card-title mb-1"><%= album.title %></h6>
       <% end %>
+      <div class="clearfix"></div>
+      <span class="small text-muted">#Created by <%= album.creator%></span>
+      
       <p class="card-text small"><%= album.description %>
       </p>
     </div>
     <div class="card-footer small text-muted">Created <%= time_ago_in_words(album.created_at)%> ago 
       <% if album.viewcount != nil %>
-      <span class="pull-right"><%= album.viewcount %> views</span>
+      <span class="pull-right"><%= album.viewcount%> views</span>
       <% else %>
       <span class="pull-right">0 views</span>
       <% end %>
