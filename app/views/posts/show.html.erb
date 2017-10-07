@@ -9,17 +9,59 @@
   <li class="breadcrumb-item active"><%= @post.title %></li>
 </ol>
 
-<p>
-    <strong>Title:</strong>
-    <%= @post.title %>
-</p>
+<div class="card-rows my-blog-post-index">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="media mt-3">
+                <a class="d-flex pr-3" href="#">
+                    <img src="<%= @post.urlimg %>" alt="" alt="" width="45px" height="45px">
+                </a>
+                <div class="media-body">
+                    <h6 class="card-title mb-1"><a href="#"><%= @post.username %></a></h6>
+                    <div class="small text-muted">32 mins ago</div>
+                </div>
+                <div class="dropdown">
+                    <a class="nav-link" id="moreActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="moreActionDropdown">
+                        <a class="dropdown-item" href="<%= edit_post_path(@post) %>">
+                            <span class="small text-muted">Edit Post</span>
+                        </a>
+                        <%= link_to post_path(@post),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' },
+                            class: "dropdown-item" do %>
+                                <span class="small text-muted">Delete Post</span>
+                        <%end%>
+                        
+                    </div>
+                </div>
+            </div>
+            <p class="card-text medium">
+                <h4><b><%= @post.title %></b></h4>
+            </p>
+            <p class="card-text medium">
+                <%= @post.content %>
+            </p>
+        </div>
+        <hr class="my-0">
+        <div class="card-footer medium text-muted">
+            <a class="mr-3 d-inline-block">
+                <i class="fa fa-fw fa-eye"></i> <span id="postidviewcount"><%= @post.viewcount %></span></a>
+        </div>
+    </div>
+</div>
 
-<p>
-    <strong>Content:</strong>
-    <%= @post.content %>
-</p>
-
-<p>
-    <strong>Username:</strong>
-    <%= @post.username %>
-</p>
+<script>
+if ($('#postidviewcount').length) {
+  
+  setInterval(function() {
+    $.ajax({url: "/posts/" + "<%= @post.id %>" + "/viewcount", success: function(result){
+        $('#postidviewcount').html(result);
+    }});
+    
+  }, 3000);
+  
+}
+</script>

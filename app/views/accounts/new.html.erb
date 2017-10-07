@@ -1,0 +1,18 @@
+<h1>Sign up</h1>
+<%= form_for(@account, url: signup_path) do |f| %>
+    <%= render 'shared/error_messages' %>    
+
+    <%= f.label :fullname %><br>
+    <%= f.text_field :fullname %><br>
+
+    <%= f.label :username %><br>
+    <%= f.text_field :username %><br>
+
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation, "Confirmation" %><br>
+    <%= f.password_field :password_confirmation %><br>
+
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+<% end %>

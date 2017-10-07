@@ -6,27 +6,83 @@
   <li class="breadcrumb-item active">Blog</li>
 </ol>
 
-<h1>Blog</h1>
+<div class="mb-0 mt-4">
+    <div class="row">
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <h2><i class="fa fa-newspaper-o"></i> Blog</h2>
+        </div>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <a class="btn btn-md btn-primary" href="<%= new_post_path %>">
+                <i class="fa fw fa-plus"></i>
+                Add Post
+            </a>
+        </div>
+    </div>
+    
+</div>
+<hr class="mt-2">
 
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Username</th>
-        <th>View</th>
-    </tr>
 
+<% @post.each do |post| %>
+    <div class="card-rows my-blog-post-index">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="media mt-3">
+                    <a class="d-flex pr-3" href="#">
+                        <img src="<%= post.urlimg %>" alt="" width="45px" height="45px">
+                    </a>
+                    <div class="media-body">
+                        <h6 class="card-title mb-1"><a href="#"><%= post.username %></a></h6>
+                        <div class="small text-muted">32 mins ago</div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link" id="moreActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="moreActionDropdown">
+                            <a class="dropdown-item" href="<%= edit_post_path(post) %>">
+                                <span class="small text-muted">Edit Post</span>
+                            </a>
+                            <%= link_to post_path(post),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' },
+                                class: "dropdown-item" do %>
+                                    <span class="small text-muted">Delete Post</span>
+                            <%end%>
+                            
+                        </div>
+                    </div>
+                </div>
+                <p class="card-text medium">
+                    <h4><b><%= post.title %></b></h4>
+                </p>
+                <p class="card-text medium">
+                    <%= truncate(post.content, length: 100, separator: ' ') %>
+                </p>
+                <p class="card-text small" align="right">
+                    <a href="<%= post_path(post) %>">View more >></a>
+                </p>
+            </div>
+            <hr class="my-0">
+            <div class="card-footer medium text-muted">
+                <a class="mr-3 d-inline-block">
+                    <i class="fa fa-fw fa-eye"></i> <span id="<%= post.id %>" class="view-count-class"><%= post.viewcount %></span></a>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+<script>
+if ($('.view-count-class').length) {
+  
+  setInterval(function() {
     <% @post.each do |post| %>
-        <tr>
-            <td><%= post.title %></td>
-            <td><%= post.content %></td>
-            <td><%= post.username %></td>
-            <td><%= post.viewcount %></td>
-            <td><%= link_to 'Show', post_path(post) %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post_path(post),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+      $.ajax({url: "/posts/" + "<%= post.id %>" + "/viewcount", success: function(result){
+        $('#'+"<%= post.id %>").html(result);
+      }});
     <% end %>
-</table>
+    
+  }, 3000);
+  
+}
+</script>
