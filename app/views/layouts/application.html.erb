@@ -18,7 +18,7 @@
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html"><h4><b>H2O</b></h4></a>
+    <a class="navbar-brand" href="<%= root_path %>"><h4><b>H2O</b></h4></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
-          <a class="nav-link" href="<%= home_index_path %>">
+          <a class="nav-link" href="<%= root_path %>">
             <i class="fa fa-fw fa-home"></i>
            <span class="nav-link-text">Home</span>
           </a>
@@ -40,6 +40,15 @@
             <li>
               <a class="nav-link" href="<%= new_album_path %>">
                 <span class="nav-link-text">Create new album</span>
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-eye"></i>
+                <span class="nav-link-text">View</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-plus"></i>
+                <span class="nav-link-text">Add Album</span>
               </a>
             </li>
           </ul>
@@ -51,7 +60,13 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<%= posts_path %>">
+                <i class="fa fa-fw fa-eye"></i>
+                <span class="nav-link-text">View</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="<%= new_post_path %>">
                 <i class="fa fa-fw fa-plus"></i>
                 <span class="nav-link-text">Add Post</span>
               </a>
@@ -59,7 +74,7 @@
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="About">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<%= about_path %>">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">About</span>
           </a>
@@ -85,12 +100,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-lg-2" id="alertsDropdown" href="#" aria-haspopup="true" aria-expanded="false">
+          <a href="<%= posts_path %>" class="nav-link mr-lg-2" id="alertsDropdown" href="#" aria-haspopup="true" aria-expanded="false">
             Blog
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">
+          <a href="<%= about_path %>" class="nav-link">
             About
           </a>
         </li>

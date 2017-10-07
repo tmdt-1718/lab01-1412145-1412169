@@ -6,9 +6,14 @@
   <li class="breadcrumb-item">
     <a href="<%= posts_path %>">Blog</a>
   </li>
-  <li class="breadcrumb-item active">Add Post</li>
+  <li class="breadcrumb-item">
+    <a href="<%= post_path(@post) %>">
+        <%= @post.title %>
+    </a>
+  </li>
+  <li class="breadcrumb-item active">Edit</li>
 </ol>
 
-<h1>New Post</h1>
+<h1>Edit post</h1>
 
 <%= render 'form' %>

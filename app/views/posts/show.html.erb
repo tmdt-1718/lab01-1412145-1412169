@@ -1,3 +1,14 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<%= root_path %>">Home</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<%= posts_path %>">Blog</a>
+  </li>
+  <li class="breadcrumb-item active"><%= @post.title %></li>
+</ol>
+
 <p>
     <strong>Title:</strong>
     <%= @post.title %>

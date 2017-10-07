@@ -5,11 +5,6 @@ one:
   description: MyText
   urlimg: MyString
   creator: MyString
-  viewcount: 1
-
-two:
-  title: MyString
-  description: MyText
-  urlimg: MyString
   creator: MyString
+  urlimg: MyString
   viewcount: 1
