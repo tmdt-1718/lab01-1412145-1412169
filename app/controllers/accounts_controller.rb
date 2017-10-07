@@ -4,6 +4,10 @@ class AccountsController < ApplicationController
 
     def show
         @account = Account.find(params[:id])
+        if @account.avatar
+        else
+            @account.update(avatar: "https://openclipart.org/image/2400px/svg_to_png/247319/abstract-user-flat-3.png")
+        end
     end
 
     def new
@@ -13,6 +17,7 @@ class AccountsController < ApplicationController
     def create
         @account = Account.new(account_params)
         if @account.save
+            @account.update(avatar: "https://openclipart.org/image/2400px/svg_to_png/247319/abstract-user-flat-3.png")
             log_in @account
             redirect_to @account
         else

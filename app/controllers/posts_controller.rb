@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     def create
         # @post = Post.new(post_params)
         if logged_in?
-            @post = Post.new(username: current_account.fullname, title: params[:post][:title], content: params[:post][:content], viewcount: 0)
+            @post = Post.new(username: current_account.fullname, title: params[:post][:title], content: params[:post][:content], viewcount: 0, urlimg: current_account.avatar)
         else
             @post = Post.new(username: "Demo1", title: params[:post][:title], content: params[:post][:content], viewcount: 0)
         end
@@ -39,6 +39,11 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+
+        if @post.urlimg
+        else
+            @post.update(urlimg: "https://openclipart.org/image/2400px/svg_to_png/247319/abstract-user-flat-3.png")
+        end
 
         count = @post.viewcount
         
