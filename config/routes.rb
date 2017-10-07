@@ -9,11 +9,8 @@ Rails.application.routes.draw do
   get '/register', to: 'about#register'
   get '/albums/:album_id/photo/:id', to: 'photos#show'
 
-  resources :posts
-  resources :home
-  resources :albums do
-    resources :photos
-  end
+  
+  
 
 
   get '/signup', to: 'accounts#new'
@@ -27,7 +24,14 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
 
+  resources :posts
+  resources :home
+  resources :albums do
+    resources :photos
+  end
   resources :accounts
 
 
-root 'home#index'
+  root 'home#index'
+
+end
