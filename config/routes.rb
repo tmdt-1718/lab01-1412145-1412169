@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # get 'home/index'
 
+  get 'posts/:id/viewcount', to: 'posts#getviewcount'
+
   get '/about', to: 'about#show'
 
   get '/signup', to: 'accounts#new'

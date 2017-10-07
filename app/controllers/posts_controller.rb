@@ -49,6 +49,11 @@ class PostsController < ApplicationController
         @post = Post.all
     end
 
+    def getviewcount
+        @post = Post.find(params[:id])
+        render plain: @post.viewcount
+    end
+
     private
         def post_params
             params.require(:post).permit(:username, :title, :content)

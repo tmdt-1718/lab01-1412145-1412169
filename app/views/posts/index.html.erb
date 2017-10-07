@@ -55,8 +55,23 @@
             <hr class="my-0">
             <div class="card-footer medium text-muted">
                 <a class="mr-3 d-inline-block">
-                    <i class="fa fa-fw fa-eye"></i> <%= post.viewcount %></a>
+                    <i class="fa fa-fw fa-eye"></i> <span id="<%= post.id %>" class="view-count-class"><%= post.viewcount %></span></a>
             </div>
         </div>
     </div>
 <% end %>
+
+<script>
+if ($('.view-count-class').length) {
+  
+  setInterval(function() {
+    <% @post.each do |post| %>
+      $.ajax({url: "/posts/" + "<%= post.id %>" + "/viewcount", success: function(result){
+        $('#'+"<%= post.id %>").html(result);
+      }});
+    <% end %>
+    
+  }, 3000);
+  
+}
+</script>
