@@ -2,16 +2,14 @@
 
 one:
   username: MyString
-  password: MyString
   avatar: MyString
   information: MyText
-  address: MyText
+  address: MyString
   fullname: MyString
 
 two:
   username: MyString
-  password: MyString
   avatar: MyString
   information: MyText
-  address: MyText
+  address: MyString
   fullname: MyString
