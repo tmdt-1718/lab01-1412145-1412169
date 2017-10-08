@@ -53,7 +53,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](https://www.youtube.com/watch?v=DR_Z168IUOc&feature=youtu.be)
+[Video Demo](https://www.youtube.com/watch?v=DR_Z168IUOc&feature=youtu.be)
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
