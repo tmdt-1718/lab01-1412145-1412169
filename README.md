@@ -32,10 +32,10 @@ Yêu cầu **bắt buộc**
 
 
 Yêu cầu **không bắt buộc**:
+* [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412145**)
 * [x] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**1412169**)
 * [x] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**1412169**)
 * [X] Chỉ cho phép người dùng tạo album và thêm ảnh vào album sau khi đã đăng nhập. (**1412169**)
-* [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412145**)
 * [ ] Có thể xem danh sách các comment của từng bài viết.
 * [ ] Cho phép người dùng đã đăng nhập comment cho bài viết.
 * [ ] Quản lý thêm thông tin tag cho mỗi bài viết. Mỗi bài viết có thể bao gồm nhiều tag và mỗi tag có thể có nhiều bài viết. 
