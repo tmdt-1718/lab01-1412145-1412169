@@ -37,14 +37,14 @@ Yêu cầu **không bắt buộc**:
 * [ ] Cho phép người dùng đăng nhập bằng tài khoản facebook và lấy ảnh đại diện, email từ facebook. (**MSSV**)
 * [x] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**1412169**)
 * [x] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**1412169**)
+* [X] Chỉ cho phép người dùng tạo album sau khi đã đăng nhập. (**1412169**)
 * [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412145**)
 * [ ] Cho phép người dùng layout bài viết bằng markdown. (**MSSV**)
 * [ ] Gửi mail cho người dùng khi người dùng đã đăng nhập thành công. (**MSSV**)
 * [ ] Gửi mail cho tác giả khi có người dùng comment vào bài viết của họ. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+
 
 ## Demo
 
