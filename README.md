@@ -33,7 +33,7 @@ Yêu cầu **bắt buộc**
 
 Yêu cầu **không bắt buộc**:
 * [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412145**)
-* [X] Sắp xếp các bài post hiển thị theo thời gian được tạo gần nhất. (**1412169**)
+* [X] Sắp xếp các bài post hiển thị theo thời gian được tạo gần nhất. (**1412145**)
 * [x] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**1412169**)
 * [x] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**1412169**)
 * [X] Chỉ cho phép người dùng tạo album và thêm ảnh vào album sau khi đã đăng nhập. (**1412169**)
