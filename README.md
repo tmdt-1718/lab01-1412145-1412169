@@ -1,6 +1,6 @@
 # BT-TMDT-1 - *H2O Social Network*
 
-**H2O Social Network** là một bài tập môn TMDT. Ứng dụng cho phép người xem và đăng hình ảnh, bài viết để chia sẽ cho mọi người.
+**H2O Social Network** là một bài tập môn TMDT. Ứng dụng cho phép người xem và đăng hình ảnh, bài viết để chia sẻ cho mọi người.
 
 Thành viên:
 * [X] **1412145** Nguyễn Đức Hải (1412145)
@@ -35,8 +35,8 @@ Yêu cầu **không bắt buộc**:
 * [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412145**)
 * [X] Sắp xếp các bài post hiển thị theo thời gian được tạo gần nhất. (**1412145**)
 * [x] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**1412169**)
-* [x] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**1412169**)
-* [X] Chỉ cho phép người dùng tạo album và thêm ảnh vào album sau khi đã đăng nhập. (**1412169**)
+* [x] Chỉ cho phép người tạo album được phép thêm ảnh vào album. (**1412169**)
+* [X] Chỉ cho phép người dùng tạo album thêm ảnh vào album sau khi đã đăng nhập. (**1412169**)
 * [X] Sắp xếp các album và photo hiển thị theo thời gian được tạo gần nhất. (**1412169**)
 * [ ] Có thể xem danh sách các comment của từng bài viết.
 * [ ] Cho phép người dùng đã đăng nhập comment cho bài viết.
