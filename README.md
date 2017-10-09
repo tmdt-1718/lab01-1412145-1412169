@@ -51,11 +51,10 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 ## Demo
 
-Link ảnh GIF demo ứng dụng:
+Link video demo ứng dụng:
 
-[Video Demo](https://www.youtube.com/watch?v=DR_Z168IUOc&feature=youtu.be)
+[Link Video Demo For Web](https://www.youtube.com/watch?v=DR_Z168IUOc&feature=youtu.be)
 
-Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 
 ## License
