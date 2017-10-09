@@ -6,7 +6,7 @@ Thành viên:
 * [X] **1412145** Nguyễn Đức Hải (1412145)
 * [X] **1412169** Hồ Thảo Hiền (1412169)
 
-URL: **URL hosting của bài tập**
+URL: **https://h2o-network.herokuapp.com/**
 
 ## Yêu cầu
 
